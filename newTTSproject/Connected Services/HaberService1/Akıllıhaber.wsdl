@@ -1,0 +1,1246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="YazarArama">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="kullaniciadi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="YazarAramaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="YazarAramaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Kategori">
+        <s:complexType />
+      </s:element>
+      <s:element name="KategoriResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="KategoriResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Yazar">
+        <s:complexType />
+      </s:element>
+      <s:element name="YazarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="YazarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteÜye">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="kullaniciadi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteÜyeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteÜyeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteKategori">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="kategoriadi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteKategoriResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteKategoriResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteYazar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yazaradi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteYazarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteYazarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddKategori">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="kategoriadi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddKategoriResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddKategoriResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddYazar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yazaradi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddYazarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddYazarResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSecim">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yazaradi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="kategoriadi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSecimResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSecimResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMakale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="baslik" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="icerik" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMakaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMakaleResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMembers">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMembersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMembersResult" type="tns:ArrayOfÜye" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfÜye">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Üye" nillable="true" type="tns:Üye" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Üye">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ÜyeID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Soyad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KullaniciAdi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sifre" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MemberDogrula">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="kullaniciadi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sifre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MemberDogrulaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MemberDogrulaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMember">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="soyad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="kullaniciadi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sifre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMemberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddMemberResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMakale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="yazarid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="kategoriid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="baslik" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="icerik" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMakaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddMakaleResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataSet" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:element ref="s:schema" />
+            <s:any />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="ArrayOfÜye" nillable="true" type="tns:ArrayOfÜye" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="YazarAramaSoapIn">
+    <wsdl:part name="parameters" element="tns:YazarArama" />
+  </wsdl:message>
+  <wsdl:message name="YazarAramaSoapOut">
+    <wsdl:part name="parameters" element="tns:YazarAramaResponse" />
+  </wsdl:message>
+  <wsdl:message name="KategoriSoapIn">
+    <wsdl:part name="parameters" element="tns:Kategori" />
+  </wsdl:message>
+  <wsdl:message name="KategoriSoapOut">
+    <wsdl:part name="parameters" element="tns:KategoriResponse" />
+  </wsdl:message>
+  <wsdl:message name="YazarSoapIn">
+    <wsdl:part name="parameters" element="tns:Yazar" />
+  </wsdl:message>
+  <wsdl:message name="YazarSoapOut">
+    <wsdl:part name="parameters" element="tns:YazarResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteÜyeSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteÜye" />
+  </wsdl:message>
+  <wsdl:message name="DeleteÜyeSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteÜyeResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteKategoriSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteKategori" />
+  </wsdl:message>
+  <wsdl:message name="DeleteKategoriSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteKategoriResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteYazarSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteYazar" />
+  </wsdl:message>
+  <wsdl:message name="DeleteYazarSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteYazarResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddKategoriSoapIn">
+    <wsdl:part name="parameters" element="tns:AddKategori" />
+  </wsdl:message>
+  <wsdl:message name="AddKategoriSoapOut">
+    <wsdl:part name="parameters" element="tns:AddKategoriResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddYazarSoapIn">
+    <wsdl:part name="parameters" element="tns:AddYazar" />
+  </wsdl:message>
+  <wsdl:message name="AddYazarSoapOut">
+    <wsdl:part name="parameters" element="tns:AddYazarResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSecimSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSecim" />
+  </wsdl:message>
+  <wsdl:message name="GetSecimSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSecimResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMakaleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMakale" />
+  </wsdl:message>
+  <wsdl:message name="GetMakaleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMakaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMembersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMembers" />
+  </wsdl:message>
+  <wsdl:message name="GetMembersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMembersResponse" />
+  </wsdl:message>
+  <wsdl:message name="MemberDogrulaSoapIn">
+    <wsdl:part name="parameters" element="tns:MemberDogrula" />
+  </wsdl:message>
+  <wsdl:message name="MemberDogrulaSoapOut">
+    <wsdl:part name="parameters" element="tns:MemberDogrulaResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddMemberSoapIn">
+    <wsdl:part name="parameters" element="tns:AddMember" />
+  </wsdl:message>
+  <wsdl:message name="AddMemberSoapOut">
+    <wsdl:part name="parameters" element="tns:AddMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddMakaleSoapIn">
+    <wsdl:part name="parameters" element="tns:AddMakale" />
+  </wsdl:message>
+  <wsdl:message name="AddMakaleSoapOut">
+    <wsdl:part name="parameters" element="tns:AddMakaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="YazarAramaHttpGetIn">
+    <wsdl:part name="kullaniciadi" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="YazarAramaHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="KategoriHttpGetIn" />
+  <wsdl:message name="KategoriHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="YazarHttpGetIn" />
+  <wsdl:message name="YazarHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="DeleteÜyeHttpGetIn">
+    <wsdl:part name="kullaniciadi" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteÜyeHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="DeleteKategoriHttpGetIn">
+    <wsdl:part name="kategoriadi" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteKategoriHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="DeleteYazarHttpGetIn">
+    <wsdl:part name="yazaradi" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteYazarHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="AddKategoriHttpGetIn">
+    <wsdl:part name="kategoriadi" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddKategoriHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AddYazarHttpGetIn">
+    <wsdl:part name="yazaradi" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddYazarHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetSecimHttpGetIn">
+    <wsdl:part name="yazaradi" type="s:string" />
+    <wsdl:part name="kategoriadi" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSecimHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetMakaleHttpGetIn">
+    <wsdl:part name="baslik" type="s:string" />
+    <wsdl:part name="icerik" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMakaleHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetMembersHttpGetIn" />
+  <wsdl:message name="GetMembersHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfÜye" />
+  </wsdl:message>
+  <wsdl:message name="MemberDogrulaHttpGetIn">
+    <wsdl:part name="kullaniciadi" type="s:string" />
+    <wsdl:part name="sifre" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MemberDogrulaHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AddMemberHttpGetIn">
+    <wsdl:part name="ad" type="s:string" />
+    <wsdl:part name="soyad" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="kullaniciadi" type="s:string" />
+    <wsdl:part name="sifre" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddMemberHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AddMakaleHttpGetIn">
+    <wsdl:part name="yazarid" type="s:string" />
+    <wsdl:part name="kategoriid" type="s:string" />
+    <wsdl:part name="baslik" type="s:string" />
+    <wsdl:part name="icerik" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddMakaleHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="YazarAramaHttpPostIn">
+    <wsdl:part name="kullaniciadi" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="YazarAramaHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="KategoriHttpPostIn" />
+  <wsdl:message name="KategoriHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="YazarHttpPostIn" />
+  <wsdl:message name="YazarHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="DeleteÜyeHttpPostIn">
+    <wsdl:part name="kullaniciadi" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteÜyeHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="DeleteKategoriHttpPostIn">
+    <wsdl:part name="kategoriadi" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteKategoriHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="DeleteYazarHttpPostIn">
+    <wsdl:part name="yazaradi" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteYazarHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="AddKategoriHttpPostIn">
+    <wsdl:part name="kategoriadi" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddKategoriHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AddYazarHttpPostIn">
+    <wsdl:part name="yazaradi" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddYazarHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetSecimHttpPostIn">
+    <wsdl:part name="yazaradi" type="s:string" />
+    <wsdl:part name="kategoriadi" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSecimHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetMakaleHttpPostIn">
+    <wsdl:part name="baslik" type="s:string" />
+    <wsdl:part name="icerik" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMakaleHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetMembersHttpPostIn" />
+  <wsdl:message name="GetMembersHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfÜye" />
+  </wsdl:message>
+  <wsdl:message name="MemberDogrulaHttpPostIn">
+    <wsdl:part name="kullaniciadi" type="s:string" />
+    <wsdl:part name="sifre" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MemberDogrulaHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AddMemberHttpPostIn">
+    <wsdl:part name="ad" type="s:string" />
+    <wsdl:part name="soyad" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="kullaniciadi" type="s:string" />
+    <wsdl:part name="sifre" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddMemberHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AddMakaleHttpPostIn">
+    <wsdl:part name="yazarid" type="s:string" />
+    <wsdl:part name="kategoriid" type="s:string" />
+    <wsdl:part name="baslik" type="s:string" />
+    <wsdl:part name="icerik" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddMakaleHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:portType name="AkıllıHaberSoap">
+    <wsdl:operation name="YazarArama">
+      <wsdl:input message="tns:YazarAramaSoapIn" />
+      <wsdl:output message="tns:YazarAramaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Kategori">
+      <wsdl:input message="tns:KategoriSoapIn" />
+      <wsdl:output message="tns:KategoriSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Yazar">
+      <wsdl:input message="tns:YazarSoapIn" />
+      <wsdl:output message="tns:YazarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteÜye">
+      <wsdl:input message="tns:DeleteÜyeSoapIn" />
+      <wsdl:output message="tns:DeleteÜyeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteKategori">
+      <wsdl:input message="tns:DeleteKategoriSoapIn" />
+      <wsdl:output message="tns:DeleteKategoriSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteYazar">
+      <wsdl:input message="tns:DeleteYazarSoapIn" />
+      <wsdl:output message="tns:DeleteYazarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddKategori">
+      <wsdl:input message="tns:AddKategoriSoapIn" />
+      <wsdl:output message="tns:AddKategoriSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddYazar">
+      <wsdl:input message="tns:AddYazarSoapIn" />
+      <wsdl:output message="tns:AddYazarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSecim">
+      <wsdl:input message="tns:GetSecimSoapIn" />
+      <wsdl:output message="tns:GetSecimSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMakale">
+      <wsdl:input message="tns:GetMakaleSoapIn" />
+      <wsdl:output message="tns:GetMakaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMembers">
+      <wsdl:input message="tns:GetMembersSoapIn" />
+      <wsdl:output message="tns:GetMembersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MemberDogrula">
+      <wsdl:input message="tns:MemberDogrulaSoapIn" />
+      <wsdl:output message="tns:MemberDogrulaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMember">
+      <wsdl:input message="tns:AddMemberSoapIn" />
+      <wsdl:output message="tns:AddMemberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMakale">
+      <wsdl:input message="tns:AddMakaleSoapIn" />
+      <wsdl:output message="tns:AddMakaleSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="AkıllıHaberHttpGet">
+    <wsdl:operation name="YazarArama">
+      <wsdl:input message="tns:YazarAramaHttpGetIn" />
+      <wsdl:output message="tns:YazarAramaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Kategori">
+      <wsdl:input message="tns:KategoriHttpGetIn" />
+      <wsdl:output message="tns:KategoriHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Yazar">
+      <wsdl:input message="tns:YazarHttpGetIn" />
+      <wsdl:output message="tns:YazarHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteÜye">
+      <wsdl:input message="tns:DeleteÜyeHttpGetIn" />
+      <wsdl:output message="tns:DeleteÜyeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteKategori">
+      <wsdl:input message="tns:DeleteKategoriHttpGetIn" />
+      <wsdl:output message="tns:DeleteKategoriHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteYazar">
+      <wsdl:input message="tns:DeleteYazarHttpGetIn" />
+      <wsdl:output message="tns:DeleteYazarHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddKategori">
+      <wsdl:input message="tns:AddKategoriHttpGetIn" />
+      <wsdl:output message="tns:AddKategoriHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddYazar">
+      <wsdl:input message="tns:AddYazarHttpGetIn" />
+      <wsdl:output message="tns:AddYazarHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSecim">
+      <wsdl:input message="tns:GetSecimHttpGetIn" />
+      <wsdl:output message="tns:GetSecimHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMakale">
+      <wsdl:input message="tns:GetMakaleHttpGetIn" />
+      <wsdl:output message="tns:GetMakaleHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMembers">
+      <wsdl:input message="tns:GetMembersHttpGetIn" />
+      <wsdl:output message="tns:GetMembersHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MemberDogrula">
+      <wsdl:input message="tns:MemberDogrulaHttpGetIn" />
+      <wsdl:output message="tns:MemberDogrulaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMember">
+      <wsdl:input message="tns:AddMemberHttpGetIn" />
+      <wsdl:output message="tns:AddMemberHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMakale">
+      <wsdl:input message="tns:AddMakaleHttpGetIn" />
+      <wsdl:output message="tns:AddMakaleHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="AkıllıHaberHttpPost">
+    <wsdl:operation name="YazarArama">
+      <wsdl:input message="tns:YazarAramaHttpPostIn" />
+      <wsdl:output message="tns:YazarAramaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Kategori">
+      <wsdl:input message="tns:KategoriHttpPostIn" />
+      <wsdl:output message="tns:KategoriHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Yazar">
+      <wsdl:input message="tns:YazarHttpPostIn" />
+      <wsdl:output message="tns:YazarHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteÜye">
+      <wsdl:input message="tns:DeleteÜyeHttpPostIn" />
+      <wsdl:output message="tns:DeleteÜyeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteKategori">
+      <wsdl:input message="tns:DeleteKategoriHttpPostIn" />
+      <wsdl:output message="tns:DeleteKategoriHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteYazar">
+      <wsdl:input message="tns:DeleteYazarHttpPostIn" />
+      <wsdl:output message="tns:DeleteYazarHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddKategori">
+      <wsdl:input message="tns:AddKategoriHttpPostIn" />
+      <wsdl:output message="tns:AddKategoriHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddYazar">
+      <wsdl:input message="tns:AddYazarHttpPostIn" />
+      <wsdl:output message="tns:AddYazarHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSecim">
+      <wsdl:input message="tns:GetSecimHttpPostIn" />
+      <wsdl:output message="tns:GetSecimHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMakale">
+      <wsdl:input message="tns:GetMakaleHttpPostIn" />
+      <wsdl:output message="tns:GetMakaleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMembers">
+      <wsdl:input message="tns:GetMembersHttpPostIn" />
+      <wsdl:output message="tns:GetMembersHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MemberDogrula">
+      <wsdl:input message="tns:MemberDogrulaHttpPostIn" />
+      <wsdl:output message="tns:MemberDogrulaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMember">
+      <wsdl:input message="tns:AddMemberHttpPostIn" />
+      <wsdl:output message="tns:AddMemberHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMakale">
+      <wsdl:input message="tns:AddMakaleHttpPostIn" />
+      <wsdl:output message="tns:AddMakaleHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AkıllıHaberSoap" type="tns:AkıllıHaberSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="YazarArama">
+      <soap:operation soapAction="http://tempuri.org/YazarArama" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Kategori">
+      <soap:operation soapAction="http://tempuri.org/Kategori" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Yazar">
+      <soap:operation soapAction="http://tempuri.org/Yazar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteÜye">
+      <soap:operation soapAction="http://tempuri.org/DeleteÜye" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteKategori">
+      <soap:operation soapAction="http://tempuri.org/DeleteKategori" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteYazar">
+      <soap:operation soapAction="http://tempuri.org/DeleteYazar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddKategori">
+      <soap:operation soapAction="http://tempuri.org/AddKategori" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddYazar">
+      <soap:operation soapAction="http://tempuri.org/AddYazar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSecim">
+      <soap:operation soapAction="http://tempuri.org/GetSecim" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMakale">
+      <soap:operation soapAction="http://tempuri.org/GetMakale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMembers">
+      <soap:operation soapAction="http://tempuri.org/GetMembers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemberDogrula">
+      <soap:operation soapAction="http://tempuri.org/MemberDogrula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMember">
+      <soap:operation soapAction="http://tempuri.org/AddMember" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMakale">
+      <soap:operation soapAction="http://tempuri.org/AddMakale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AkıllıHaberSoap12" type="tns:AkıllıHaberSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="YazarArama">
+      <soap12:operation soapAction="http://tempuri.org/YazarArama" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Kategori">
+      <soap12:operation soapAction="http://tempuri.org/Kategori" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Yazar">
+      <soap12:operation soapAction="http://tempuri.org/Yazar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteÜye">
+      <soap12:operation soapAction="http://tempuri.org/DeleteÜye" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteKategori">
+      <soap12:operation soapAction="http://tempuri.org/DeleteKategori" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteYazar">
+      <soap12:operation soapAction="http://tempuri.org/DeleteYazar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddKategori">
+      <soap12:operation soapAction="http://tempuri.org/AddKategori" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddYazar">
+      <soap12:operation soapAction="http://tempuri.org/AddYazar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSecim">
+      <soap12:operation soapAction="http://tempuri.org/GetSecim" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMakale">
+      <soap12:operation soapAction="http://tempuri.org/GetMakale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMembers">
+      <soap12:operation soapAction="http://tempuri.org/GetMembers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemberDogrula">
+      <soap12:operation soapAction="http://tempuri.org/MemberDogrula" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMember">
+      <soap12:operation soapAction="http://tempuri.org/AddMember" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMakale">
+      <soap12:operation soapAction="http://tempuri.org/AddMakale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AkıllıHaberHttpGet" type="tns:AkıllıHaberHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="YazarArama">
+      <http:operation location="/YazarArama" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Kategori">
+      <http:operation location="/Kategori" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Yazar">
+      <http:operation location="/Yazar" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteÜye">
+      <http:operation location="/DeleteÜye" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteKategori">
+      <http:operation location="/DeleteKategori" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteYazar">
+      <http:operation location="/DeleteYazar" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddKategori">
+      <http:operation location="/AddKategori" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddYazar">
+      <http:operation location="/AddYazar" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSecim">
+      <http:operation location="/GetSecim" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMakale">
+      <http:operation location="/GetMakale" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMembers">
+      <http:operation location="/GetMembers" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemberDogrula">
+      <http:operation location="/MemberDogrula" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMember">
+      <http:operation location="/AddMember" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMakale">
+      <http:operation location="/AddMakale" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AkıllıHaberHttpPost" type="tns:AkıllıHaberHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="YazarArama">
+      <http:operation location="/YazarArama" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Kategori">
+      <http:operation location="/Kategori" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Yazar">
+      <http:operation location="/Yazar" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteÜye">
+      <http:operation location="/DeleteÜye" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteKategori">
+      <http:operation location="/DeleteKategori" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteYazar">
+      <http:operation location="/DeleteYazar" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddKategori">
+      <http:operation location="/AddKategori" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddYazar">
+      <http:operation location="/AddYazar" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSecim">
+      <http:operation location="/GetSecim" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMakale">
+      <http:operation location="/GetMakale" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMembers">
+      <http:operation location="/GetMembers" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemberDogrula">
+      <http:operation location="/MemberDogrula" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMember">
+      <http:operation location="/AddMember" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMakale">
+      <http:operation location="/AddMakale" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AkıllıHaber">
+    <wsdl:port name="AkıllıHaberSoap" binding="tns:AkıllıHaberSoap">
+      <soap:address location="http://ulak.online/Ak%C4%B1ll%C4%B1haber.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AkıllıHaberSoap12" binding="tns:AkıllıHaberSoap12">
+      <soap12:address location="http://ulak.online/Ak%C4%B1ll%C4%B1haber.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AkıllıHaberHttpGet" binding="tns:AkıllıHaberHttpGet">
+      <http:address location="http://ulak.online/Ak%C4%B1ll%C4%B1haber.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AkıllıHaberHttpPost" binding="tns:AkıllıHaberHttpPost">
+      <http:address location="http://ulak.online/Ak%C4%B1ll%C4%B1haber.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
